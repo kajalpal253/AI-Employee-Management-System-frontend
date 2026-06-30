@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+function AddCandidate(){
 
-function AddEmployee(){
     const navigate =useNavigate();
-    const [employee,setEmployee]=useState({
+    const [candidate,setCandidate]=useState({
         name:"",
-        department:"",
+        skills:"",
         salary:"",
         email:"",
         gender:"",
@@ -15,25 +15,25 @@ function AddEmployee(){
     });
 
     const handleChange=(e)=>{
-        setEmployee({
-            ...employee,
+        setCandidate({
+            ...candidate,
             [e.target.name]:e.target.value,
         });
     };
-    const saveEmployee =async () =>{
+    const saveCandidate =async () =>{
         try {
-            await axios.post("http://localhost:8999/employee",
-                employee,{
+            await axios.post("http://localhost:8999/candidates/upload",
+                candidate,{
                     headers :{
                         Authorization:"Bearer "+localStorage.getItem("token"),
                     },
                 }
             );
-            alert("Employee Add Successfully");
-            navigate("/employee");
+            alert("Candidate Add Successfully");
+            navigate("/candidate");
         } catch (error) {
            console.log(error); 
-           alert("Failed to Add Employee ");
+           alert("Failed to Add Candidate ");
         }
     }
 
@@ -46,48 +46,41 @@ function AddEmployee(){
           <div className="bg-white p-8 rounded-xl shadow-xl w-[450px]">
 
         <h1 className="text-3xl font-bold text-center mb-6 text-gray-900">
-          Add Employee
+          Add Candidate
         </h1>
 
         <input
           type="text"
           name="name"
-          placeholder="Employee Name"
-          value={employee.name}
+          placeholder="Candidate Name"
+          value={candidate.name}
           onChange={handleChange}
           className="w-full border p-3 rounded mb-4"
         />
 
         <input
           type="text"
-          name="department"
-          placeholder="Department"
-          value={employee.department}
+          name="skills"
+          placeholder="Skills"
+          value={candidate.skills}
           onChange={handleChange}
           className="w-full border p-3 rounded mb-4"
         />
 
-        <input
-          type="number"
-          name="salary"
-          placeholder="Salary"
-          value={employee.salary}
-          onChange={handleChange}
-          className="w-full border p-3 rounded mb-4"
-        />
+        
 
         <input
           type="email"
           name="email"
           placeholder="Email"
-          value={employee.email}
+          value={candidate.email}
           onChange={handleChange}
           className="w-full border p-3 rounded mb-6"
         />
         <select
   name="gender"
   placeholder="Gender"
-  value={employee.gender}
+  value={candidate.gender}
   onChange={handleChange}
   className="w-full border p-3 rounded mb-4"
 >
@@ -101,17 +94,17 @@ function AddEmployee(){
           type="number"
           name="phone"
           placeholder="Phone"
-          value={employee.phone}
+          value={candidate.phone}
           onChange={handleChange}
           className="w-full border p-3 rounded mb-6"
         />
 
 
         <button
-          onClick={saveEmployee}
+          onClick={saveCandidate}
           className="w-full bg-green-600 text-white p-3 rounded-lg hover:bg-green-700"
         >
-          Save Employee
+          Save 
         </button>
 
       </div>
@@ -120,6 +113,7 @@ function AddEmployee(){
 
     </div>
   );
+
 }
 
-export default AddEmployee;
+export default  AddCandidate;
