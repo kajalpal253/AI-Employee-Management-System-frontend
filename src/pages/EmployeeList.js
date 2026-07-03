@@ -10,7 +10,7 @@ function EmployeeList() {
    },[]);
 
    const handleEdit =(id)=>{
-    navigate(`/edit/${id}`);
+     navigate(`/edit-employee/${id}`);
    };
 
    const  handleAdd=() =>{
@@ -90,7 +90,7 @@ const deleteEmployee = async (id)=>{
                                  <td className="p-3">{emp.gender}</td>
                                 <td className="p-3">{emp.phone}</td>
                                 <td className="p-3 space-x-2">
-                                    <button onClick={()=>navigate(`/edit-employee/${emp.id}`)} className="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-700">Edit</button>
+                                    <button onClick={()=>handleEdit(emp.id)} className="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-700">Edit</button>
                                      <button onClick={()=>deleteEmployee(emp.id)} className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-700">Delete</button>
 
 

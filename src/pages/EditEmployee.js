@@ -1,6 +1,7 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { useState } from "react";
 
 function EditEmployee(){
     const  {id} =useParams();
@@ -13,7 +14,9 @@ function EditEmployee(){
         gender:"",
         phone:"",
     });
-    const  getEmployee =async () =>{
+    
+    useEffect(() => {
+      const  getEmployee =async () =>{
         try {
             const response =await axios.get(`https://ai-employ-management-system.onrender.com/employee/${id}`,{
                 headers: {
@@ -24,7 +27,9 @@ function EditEmployee(){
         } catch (error) {
            console.log(error); 
         }
-    }
+    };
+    getEmployee();
+}, [id]);
 
     const handleChange =(e) =>{
         setEmployee({
@@ -35,7 +40,7 @@ function EditEmployee(){
 
     const  updateEmployee =async () =>{
         try {
-            const response =await axios.put(`https://ai-employ-management-system.onrender.com/employee/${id}`,employee,{
+            await axios.put(`https://ai-employ-management-system.onrender.com/employee/${id}`,employee,{
                 headers: {
                     Authorization :`Bearer ${localStorage.getItem("token")}`,
                 },

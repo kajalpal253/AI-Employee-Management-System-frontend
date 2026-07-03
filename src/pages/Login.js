@@ -1,13 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 function Login() {
     const navigate= useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
-  const [otp, setOtp] = useState("");
 
   const login = async () => {
     try {
@@ -38,37 +36,9 @@ function Login() {
     }
   };
 
-  const sendOtp = async() =>{
-    try{
-      const response = await axios.post(
-        "http://localhost:8999/auth/send-otp",
-        {
-          email,
-        }
-      );
-      alert("OTP Send Successfully")
-    }catch(error){
-      alert("Failed to send OTP");
-    }
-  };
+  
 
-  const verifyOtp = async() =>{
-    try{
-      const response = await axios.post(
-        "http://localhost:8999/auth/verify-otp",
-        {
-          email,
-          otp,
-        }
-      );
-      alert(response.data)
-      if(response.data === "OTP Verified"){
-        navigate("/employee");
-      }
-    }catch(error){
-      alert("Invalid OTP");
-    }
-  };
+  
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-blue-200">
