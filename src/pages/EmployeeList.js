@@ -53,15 +53,15 @@ const deleteEmployee = async (id)=>{
 
   
     return (
-        <div className="min-h-screen bg-gray-700 p-2 ">
-            <div className="bg-blue-700 text-white py-2 shadow-md mt-2">  <h1 className="text-4xl font-bold text-center p-8">Employee Management System</h1>
+        <div className="min-h-screen bg-gray-700 p-4 ">
+            <div className="bg-blue-700 text-white py-2 shadow-md mt-2">  <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center p-4 md:p-8">Employee Management System</h1>
       </div>
-            <button onClick={handleAdd} className="bg-green-700 text-white px-4 py-2 mt-4 rounded-lg hover:bg-green-900">
+            <button onClick={handleAdd} className="w-full sm:w-auto bg-green-700 text-white px-4 py-2 mt-4 rounded-lg hover:bg-green-900">
                 + Add Employee
             </button>
 
-            <div className=" bg-white shadow-xl rounded-xl p-6 mt-2">
-                <table className="w-full border">
+<div className="bg-white  shadow-xl rounded-xl p-6 mt-4  overflow-x-auto">        
+            <table className="min-w-[1000px] w-full border">
                     <thead>
                         <tr className="bg-blue-600 text-white">
                             <th className="p-3">Sr.No</th>
