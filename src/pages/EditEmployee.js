@@ -18,7 +18,7 @@ function EditEmployee(){
     useEffect(() => {
       const  getEmployee =async () =>{
         try {
-            const response =await axios.get(`https://ai-employ-management-system.onrender.com/employee/${id}`,{
+            const response =await axios.get(`https://ai-employ-management-system-1.onrender.com/employee/${id}`,{
                 headers: {
                     Authorization :"Bearer "+localStorage.getItem("token"),
                 },
@@ -40,7 +40,7 @@ function EditEmployee(){
 
     const  updateEmployee =async () =>{
         try {
-            await axios.put(`https://ai-employ-management-system.onrender.com/employee/${id}`,employee,{
+            await axios.put(`https://ai-employ-management-system-1.onrender.com/employee/${id}`,employee,{
                 headers: {
                     Authorization :`Bearer ${localStorage.getItem("token")}`,
                 },

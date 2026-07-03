@@ -19,7 +19,7 @@ function EmployeeList() {
 
    const getEmployee = async () => {
     try{
-        const respons = await axios.get("https://ai-employ-management-system.onrender.com/employee",
+        const respons = await axios.get("https://ai-employ-management-system-1.onrender.com/employee",
             {
                 headers:{
                     Authorization: "Bearer "+ localStorage.getItem("token"),
@@ -37,7 +37,7 @@ const deleteEmployee = async (id)=>{
 
     if(!confirmDelete)return;
     try {
-        await axios.delete(`https://ai-employ-management-system.onrender.com/employee/${id}`,{
+        await axios.delete(`https://ai-employ-management-system-1.onrender.com/employee/${id}`,{
             headers:{
                 Authorization:"Bearer "+localStorage.getItem("token"),
             },

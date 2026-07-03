@@ -11,7 +11,7 @@ const [role,setRole] = useState("");
 
 const register = async () => {
     try {
-        await axios.post("https://ai-employ-management-system.onrender.com/auth/register",
+        await axios.post("https://ai-employ-management-system-1.onrender.com/auth/register",
         {
             username,
             email,

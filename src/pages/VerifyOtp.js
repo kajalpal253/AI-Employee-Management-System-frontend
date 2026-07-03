@@ -15,7 +15,7 @@ function VerifyOtp() {
     try {
 
       const response = await axios.post(
-        "https://ai-employ-management-system.onrender.com/auth/verify-otp",
+        "https://ai-employ-management-system-1.onrender.com/auth/verify-otp",
         {
           email,
           otp
@@ -37,7 +37,7 @@ function VerifyOtp() {
   };
   const resendOtp = async () => {
   try {
-    await axios.post("https://ai-employ-management-system.onrender.com/auth/send-otp", {
+    await axios.post("https://ai-employ-management-system-1.onrender.com/auth/send-otp", {
       email,
     });
 
