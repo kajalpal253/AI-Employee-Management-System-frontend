@@ -17,7 +17,7 @@ function CandidateList() {
 
    const getCandidate = async () => {
     try{
-        const respons = await axios.get("http://localhost:8999/candidates",
+        const respons = await axios.get("https://ai-employ-management-system.onrender.com/candidates",
             {
                 headers:{
                     Authorization: "Bearer "+ localStorage.getItem("token"),
@@ -35,7 +35,7 @@ const deleteCandidate = async (id)=>{
          
     if(!confirmDelete)return;
     try {
-        await axios.delete(`http://localhost:8999/candidates/${id}`,{
+        await axios.delete(`https://ai-employ-management-system.onrender.com/candidates/${id}`,{
             headers:{
                 Authorization:"Bearer "+localStorage.getItem("token"),
             },

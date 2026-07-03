@@ -22,7 +22,7 @@ function AddEmployee(){
     };
     const saveEmployee =async () =>{
         try {
-            await axios.post("http://localhost:8999/employee",
+            await axios.post("https://ai-employ-management-system.onrender.com/employee",
                 employee,{
                     headers :{
                         Authorization:"Bearer "+localStorage.getItem("token"),

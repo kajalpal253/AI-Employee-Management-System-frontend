@@ -22,7 +22,7 @@ function AddCandidate(){
     };
     const saveCandidate =async () =>{
         try {
-            await axios.post("http://localhost:8999/candidates/upload",
+            await axios.post("https://ai-employ-management-system.onrender.com/candidates/upload",
                 candidate,{
                     headers :{
                         Authorization:"Bearer "+localStorage.getItem("token"),
