@@ -35,11 +35,11 @@ const register = async () => {
 
 
 return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-200 to-indigo-700">
-      <div className=" min-h-screen flex items-center justify-center p-6">  
-          <h1 className="text-7xl font-bold text-center text-blue-900"> Employee Management System</h1>
+    <div className="min-h-screen flex flex-col lg:flex-row items-center justify-center bg-gradient-to-r from-blue-200 to-indigo-700 p-6 gap-10">
+        <div className="flex items-center justify-center w-full lg:w-1/2">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-center text-blue-900"> Employee Management System</h1>
     </div>
-        <div className="bg-white p-5 rounded-2xl shadow-2xl w-96 h-70">
+        <div className="bg-white p-5 rounded-2xl shadow-2xl w-full max-w-md">
             <p className=" text-2xl font-bold text-center text-gray-700 mb-6"> Create Your Account</p>
             <input type="text"
             placeholder="Username"
