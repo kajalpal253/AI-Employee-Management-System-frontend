@@ -43,6 +43,7 @@ const deleteEmployee = async (id)=>{
             },
         });
         alert("Employee Deleted Successfully");
+        console.log(localStorage.getItem('token'));
         getEmployee();
     } catch (error) {
         console.log(error);

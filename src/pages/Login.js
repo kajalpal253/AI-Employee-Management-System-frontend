@@ -18,10 +18,21 @@ function Login() {
           password,
         }
       );
+      if (response.data === "Please verify your email first") {
+      alert(response.data);
+      return;
+    }
 
-      localStorage.setItem("token", response.data);
-      alert("Login Successful");
-      navigate("/employee");
+    if (response.data === "Invalid Username or Password") {
+      alert(response.data);
+      return;
+    }
+
+    localStorage.setItem("token", response.data);
+    alert("Login Successful");
+    navigate("/dashboard");
+
+     
     } catch (error) {
       alert("Login Failed");
     }

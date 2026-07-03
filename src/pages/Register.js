@@ -18,11 +18,7 @@ const register = async () => {
             password,
             role,
         });
-        await axios.post("http://localhost:8999/auth/send-otp",
-            {email
-
-            }
-        );
+        
         navigate("/verify-otp",{
             state: {email}
         });
