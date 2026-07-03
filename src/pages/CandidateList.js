@@ -37,7 +37,7 @@ function CandidateList() {
     if (!confirmDelete) return;
     try {
       await axios.delete(
-        `https://ai-employ-management-system.onrender.com-1/candidates/${id}`,
+        `https://ai-employ-management-system-1.onrender.com/candidates/${id}`,
         {
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
