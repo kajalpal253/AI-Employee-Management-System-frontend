@@ -100,7 +100,7 @@ function CandidateList() {
                 <td className=" py-2 whitespace-nowrap">{can.score}</td>
                 <td className=" py-2 whitespace-nowrap space-x-2">
                   <button
-                    onClick={handleAdd}
+                    onClick={deleteCandidate}
                     className="w-full sm:w-auto bg-green-700 text-white px-4 py-2 mt-4 rounded-lg hover:bg-green-900"
                   >
                     Delete
